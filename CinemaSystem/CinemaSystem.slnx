@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Cinemasystem.Core/">
+    <Project Path="Cinemasystem.Core/CinemaSystem.Core.csproj" />
+  </Folder>
+  <Folder Name="/Cinemasystem.Tests/">
+    <Project Path="Cinemasystem.Tests/CinemaSystem.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Cinemasystem.Web/">
+    <Project Path="Cinemasystem.Web/CinemaSystem.Web.csproj" />
+  </Folder>
+</Solution>
