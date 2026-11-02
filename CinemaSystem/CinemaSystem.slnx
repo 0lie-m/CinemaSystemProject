@@ -8,4 +8,6 @@
   <Folder Name="/Cinemasystem.Web/">
     <Project Path="Cinemasystem.Web/CinemaSystem.Web.csproj" />
   </Folder>
+  <Project Path="../CinemaSystem.Booking.Api/CinemaSystem.Booking.Api.csproj" />
+  <Project Path="../CinemaSystem.Pricing.Api/CinemaSystem.Pricing.Api.csproj" />
 </Solution>
