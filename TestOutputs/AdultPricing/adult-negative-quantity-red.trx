@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e97c172c-7bb1-42ed-8409-8ef53f128aa3" name="StudentOliverMaher(T@S300-KY-8ZTP894 2026-11-16 09:21:24" runUser="AzureAD\StudentOliverMaher(T" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-16T09:21:24.4312312+00:00" queuing="2026-11-16T09:21:24.4312316+00:00" start="2026-11-16T09:21:23.8329944+00:00" finish="2026-11-16T09:21:24.4408852+00:00" />
+  <TestSettings name="default" id="c4360c33-7b9d-4437-ba44-14381e38957a">
+    <Deployment runDeploymentRoot="StudentOliverMaher_T_S300-KY-8ZTP894_2026-11-16_09_21_24" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="614f4df5-461a-46f2-bc44-045f198c4bb0" testId="997226da-096f-0ddf-68be-428b75047f5d" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" computerName="S300-KY-8ZTP894" duration="00:00:00.0025014" startTime="2026-11-16T09:21:24.3576659+00:00" endTime="2026-11-16T09:21:24.3578184+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="614f4df5-461a-46f2-bc44-045f198c4bb0" />
+    <UnitTestResult executionId="fc33495a-3c34-4cba-b997-6af1f5fa60b5" testId="ac9b6379-020d-d440-40c3-4986190df5fd" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" computerName="S300-KY-8ZTP894" duration="00:00:00.0048027" startTime="2026-11-16T09:21:24.3318844+00:00" endTime="2026-11-16T09:21:24.3488480+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc33495a-3c34-4cba-b997-6af1f5fa60b5">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown&#xD;
+Expected: typeof(System.ArgumentOutOfRangeException)</Message>
+          <StackTrace>   at CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException() in C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\AdultPricingStrategyTests.cs:line 22&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="997226da-096f-0ddf-68be-428b75047f5d">
+      <Execution id="614f4df5-461a-46f2-bc44-045f198c4bb0" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ac9b6379-020d-d440-40c3-4986190df5fd">
+      <Execution id="fc33495a-3c34-4cba-b997-6af1f5fa60b5" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="997226da-096f-0ddf-68be-428b75047f5d" executionId="614f4df5-461a-46f2-bc44-045f198c4bb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac9b6379-020d-d440-40c3-4986190df5fd" executionId="fc33495a-3c34-4cba-b997-6af1f5fa60b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" passed="1" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.10)&#xD;
+[xUnit.net 00:00:00.06]   Discovering: CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.08]   Discovered:  CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.10]   Starting:    CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.13]       Assert.Throws() Failure: No exception was thrown&#xD;
+[xUnit.net 00:00:00.13]       Expected: typeof(System.ArgumentOutOfRangeException)&#xD;
+[xUnit.net 00:00:00.13]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.13]         C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\AdultPricingStrategyTests.cs(22,0): at CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException()&#xD;
+[xUnit.net 00:00:00.13]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.13]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.14]   Finished:    CinemaSystem.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="S300-KY-8ZTP894" outcome="Error" timestamp="2026-11-16T09:21:24.3506802+00:00">
+        <Text>[xUnit.net 00:00:00.13]     CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

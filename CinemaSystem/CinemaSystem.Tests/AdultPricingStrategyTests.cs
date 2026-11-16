@@ -13,4 +13,15 @@ public class AdultPricingStrategyTests
 
         Assert.Equal(20m, total);
     }
+
+    [Fact]
+public void CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException()
+{
+    var strategy = new AdultPricingStrategy();
+
+    Assert.Throws<ArgumentOutOfRangeException>(
+        () => strategy.CalculatePrice(10m, -1));
 }
+}
+
+
