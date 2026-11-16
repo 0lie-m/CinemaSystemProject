@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a0c29cde-b3e7-4a33-a4d7-1dcaba0b94d4" name="StudentOliverMaher(T@S300-KY-8ZTP894 2026-11-16 09:32:06" runUser="AzureAD\StudentOliverMaher(T" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-16T09:32:06.5919845+00:00" queuing="2026-11-16T09:32:06.5919848+00:00" start="2026-11-16T09:32:05.9649032+00:00" finish="2026-11-16T09:32:06.6008653+00:00" />
+  <TestSettings name="default" id="e52a36a8-8486-4dc3-ae60-39cd25359d75">
+    <Deployment runDeploymentRoot="StudentOliverMaher_T_S300-KY-8ZTP894_2026-11-16_09_32_06" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="575e54b7-6a19-48c8-970f-0ec9ae31cde3" testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" testName="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" computerName="S300-KY-8ZTP894" duration="00:00:00.0143839" startTime="2026-11-16T09:32:06.4943555+00:00" endTime="2026-11-16T09:32:06.5131675+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="575e54b7-6a19-48c8-970f-0ec9ae31cde3" />
+    <UnitTestResult executionId="f0e44933-09e5-429a-bfe7-dba27d225312" testId="997226da-096f-0ddf-68be-428b75047f5d" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" computerName="S300-KY-8ZTP894" duration="00:00:00.0000810" startTime="2026-11-16T09:32:06.5198291+00:00" endTime="2026-11-16T09:32:06.5198583+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f0e44933-09e5-429a-bfe7-dba27d225312" />
+    <UnitTestResult executionId="c63b599e-d5c0-4e82-9d30-545766d057d4" testId="ac9b6379-020d-d440-40c3-4986190df5fd" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" computerName="S300-KY-8ZTP894" duration="00:00:00.0134126" startTime="2026-11-16T09:32:06.4955036+00:00" endTime="2026-11-16T09:32:06.5154864+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c63b599e-d5c0-4e82-9d30-545766d057d4" />
+    <UnitTestResult executionId="b0e13a2f-e1b5-421c-bbd6-5ff19d47159a" testId="0695134e-bdc9-0059-ea93-c50138a13b82" testName="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" computerName="S300-KY-8ZTP894" duration="00:00:00.0157189" startTime="2026-11-16T09:32:06.4954769+00:00" endTime="2026-11-16T09:32:06.5212525+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0e13a2f-e1b5-421c-bbd6-5ff19d47159a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ&#xD;
+Expected: 14&#xD;
+Actual:   0</Message>
+          <StackTrace>   at CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro() in C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\ChildPricingStrategyTests.cs:line 14&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="997226da-096f-0ddf-68be-428b75047f5d">
+      <Execution id="f0e44933-09e5-429a-bfe7-dba27d225312" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ce83ff2c-094f-148b-a34a-1a71f1bd7616">
+      <Execution id="575e54b7-6a19-48c8-970f-0ec9ae31cde3" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.StudentPricingStrategyTests" name="CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="0695134e-bdc9-0059-ea93-c50138a13b82">
+      <Execution id="b0e13a2f-e1b5-421c-bbd6-5ff19d47159a" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.ChildPricingStrategyTests" name="CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" storage="c:\users\studentolivermaher(t\desktop\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ac9b6379-020d-d440-40c3-4986190df5fd">
+      <Execution id="c63b599e-d5c0-4e82-9d30-545766d057d4" />
+      <TestMethod codeBase="C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" executionId="575e54b7-6a19-48c8-970f-0ec9ae31cde3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="997226da-096f-0ddf-68be-428b75047f5d" executionId="f0e44933-09e5-429a-bfe7-dba27d225312" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac9b6379-020d-d440-40c3-4986190df5fd" executionId="c63b599e-d5c0-4e82-9d30-545766d057d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0695134e-bdc9-0059-ea93-c50138a13b82" executionId="b0e13a2f-e1b5-421c-bbd6-5ff19d47159a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.10)&#xD;
+[xUnit.net 00:00:00.07]   Discovering: CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.10]   Discovered:  CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.11]   Starting:    CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.15]       Assert.Equal() Failure: Values differ&#xD;
+[xUnit.net 00:00:00.15]       Expected: 14&#xD;
+[xUnit.net 00:00:00.15]       Actual:   0&#xD;
+[xUnit.net 00:00:00.15]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.16]         C:\Users\StudentOliverMaher(T\Desktop\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\ChildPricingStrategyTests.cs(14,0): at CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro()&#xD;
+[xUnit.net 00:00:00.16]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.16]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.16]   Finished:    CinemaSystem.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="S300-KY-8ZTP894" outcome="Error" timestamp="2026-11-16T09:32:06.5228937+00:00">
+        <Text>[xUnit.net 00:00:00.15]     CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
