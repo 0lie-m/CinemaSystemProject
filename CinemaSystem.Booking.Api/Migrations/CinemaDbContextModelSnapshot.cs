@@ -17,6 +17,51 @@ namespace CinemaSystem.Booking.Api.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.10");
 
+            modelBuilder.Entity("CinemaSystem.Booking.Api.Models.BookedTicket", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("PricePaid")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TicketType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("BookedTickets");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Booking.Api.Models.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ShowingId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShowingId");
+
+                    b.ToTable("Bookings");
+                });
+
             modelBuilder.Entity("CinemaSystem.Booking.Api.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -88,6 +133,28 @@ namespace CinemaSystem.Booking.Api.Migrations
                     b.ToTable("Showings");
                 });
 
+            modelBuilder.Entity("CinemaSystem.Booking.Api.Models.BookedTicket", b =>
+                {
+                    b.HasOne("CinemaSystem.Booking.Api.Models.Booking", "Booking")
+                        .WithMany("Tickets")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Booking.Api.Models.Booking", b =>
+                {
+                    b.HasOne("CinemaSystem.Booking.Api.Models.Showing", "Showing")
+                        .WithMany()
+                        .HasForeignKey("ShowingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Showing");
+                });
+
             modelBuilder.Entity("CinemaSystem.Booking.Api.Models.Showing", b =>
                 {
                     b.HasOne("CinemaSystem.Booking.Api.Models.Movie", "Movie")
@@ -105,6 +172,11 @@ namespace CinemaSystem.Booking.Api.Migrations
                     b.Navigation("Movie");
 
                     b.Navigation("Screen");
+                });
+
+            modelBuilder.Entity("CinemaSystem.Booking.Api.Models.Booking", b =>
+                {
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

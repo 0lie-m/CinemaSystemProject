@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="5dc340f4-25d6-48c7-a37e-9e3197217fe2" name="olive@OLIE 2026-11-19 19:07:33" runUser="OLIE\olive" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-19T19:07:33.0180004+00:00" queuing="2026-11-19T19:07:33.0180008+00:00" start="2026-11-19T19:07:31.9766257+00:00" finish="2026-11-19T19:07:34.2032503+00:00" />
+  <TestSettings name="default" id="51a6db95-8051-48b7-a7ac-cac87e9a8398">
+    <Deployment runDeploymentRoot="olive_OLIE_2026-11-19_19_07_33" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="11594f6f-35e8-41dc-88f6-2505583c87d5" testId="d44bff3b-839b-f6c2-0092-cd87b3a6f033" testName="CinemaSystem.Tests.BookingFacadeTests.BookAsync_EnoughSeats_SavesBookingAndTickets" computerName="OLIE" duration="00:00:00.0321211" startTime="2026-11-19T19:07:34.0576012+00:00" endTime="2026-11-19T19:07:34.0814515+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11594f6f-35e8-41dc-88f6-2505583c87d5">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotImplementedException : The method or operation is not implemented.</Message>
+          <StackTrace>   at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken) in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs:line 26&#xD;
+   at CinemaSystem.Tests.BookingFacadeTests.BookAsync_EnoughSeats_SavesBookingAndTickets() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs:line 21&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c52e95ba-f50d-4275-886c-701d1a2d9d3b" testId="4fa9f841-0f5e-944b-fd2e-88a6efb504c2" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_ChildCreator_ReturnsChildTicket" computerName="OLIE" duration="00:00:00.0043962" startTime="2026-11-19T19:07:32.9925033+00:00" endTime="2026-11-19T19:07:32.9925366+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c52e95ba-f50d-4275-886c-701d1a2d9d3b" />
+    <UnitTestResult executionId="94e4c55f-09a0-4aaa-b375-2a3c98341157" testId="9e00a5d3-9d5e-3e12-9937-783254f1456d" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeQuantity_ThrowsException" computerName="OLIE" duration="00:00:00.0002643" startTime="2026-11-19T19:07:32.9899267+00:00" endTime="2026-11-19T19:07:32.9906074+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94e4c55f-09a0-4aaa-b375-2a3c98341157" />
+    <UnitTestResult executionId="03f3138b-dbe3-4f3e-9d86-98b12aa231bd" testId="3588f11d-9bf9-ffd0-05f2-abd2b326225e" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" computerName="OLIE" duration="00:00:00.0001095" startTime="2026-11-19T19:07:32.9896788+00:00" endTime="2026-11-19T19:07:32.9897122+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03f3138b-dbe3-4f3e-9d86-98b12aa231bd" />
+    <UnitTestResult executionId="feb160f9-ea83-4a61-9082-4f5885b3c278" testId="e620ea12-f51d-18e2-ab34-5dd629d824c1" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_InvalidShowingId_ThrowsException(showingId: 0)" computerName="OLIE" duration="00:00:00.0001930" startTime="2026-11-19T19:07:32.9923810+00:00" endTime="2026-11-19T19:07:32.9924178+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="feb160f9-ea83-4a61-9082-4f5885b3c278" />
+    <UnitTestResult executionId="966bf8f7-16bf-41da-be91-ce42d1b2aecc" testId="b4b96f02-ce2c-9f3c-4f41-a72369cecea6" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_NegativePrice_ThrowsException" computerName="OLIE" duration="00:00:00.0003348" startTime="2026-11-19T19:07:32.9929571+00:00" endTime="2026-11-19T19:07:32.9929876+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="966bf8f7-16bf-41da-be91-ce42d1b2aecc" />
+    <UnitTestResult executionId="e3463682-f591-4b34-b605-3926a75c0212" testId="229db8c8-f33e-ce29-fecf-0893c76d11af" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" computerName="OLIE" duration="00:00:00.0001329" startTime="2026-11-19T19:07:32.9877113+00:00" endTime="2026-11-19T19:07:32.9877939+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3463682-f591-4b34-b605-3926a75c0212" />
+    <UnitTestResult executionId="d8595f85-9bf9-4623-bb77-444395cc6e78" testId="773a7c40-1652-aa1a-23f6-638a685100a9" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_StudentCreator_ReturnsStudentTicket" computerName="OLIE" duration="00:00:00.0004659" startTime="2026-11-19T19:07:32.9928459+00:00" endTime="2026-11-19T19:07:32.9928771+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d8595f85-9bf9-4623-bb77-444395cc6e78" />
+    <UnitTestResult executionId="49db16ac-4bb4-40b1-9d99-bcfdac6d86ec" testId="99be1bda-7016-6c67-d4be-7cf265ec2eed" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: -1)" computerName="OLIE" duration="00:00:00.0001855" startTime="2026-11-19T19:07:32.9883159+00:00" endTime="2026-11-19T19:07:32.9891637+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49db16ac-4bb4-40b1-9d99-bcfdac6d86ec" />
+    <UnitTestResult executionId="e190d2d3-998e-4e24-bfa1-79640825d0e7" testId="ac9b6379-020d-d440-40c3-4986190df5fd" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" computerName="OLIE" duration="00:00:00.0049920" startTime="2026-11-19T19:07:32.9365572+00:00" endTime="2026-11-19T19:07:32.9529987+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e190d2d3-998e-4e24-bfa1-79640825d0e7" />
+    <UnitTestResult executionId="3ac83681-d63f-45a8-8d1d-8e29f00d98bc" testId="b42ff467-af5a-9b93-255e-2b06ea4b45e7" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" computerName="OLIE" duration="00:00:00.0003859" startTime="2026-11-19T19:07:32.9616878+00:00" endTime="2026-11-19T19:07:32.9618489+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ac83681-d63f-45a8-8d1d-8e29f00d98bc" />
+    <UnitTestResult executionId="973a89af-59f2-4594-a8df-0bd15e0dd095" testId="5b41f31e-23f7-5255-0818-619832c13708" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: 101)" computerName="OLIE" duration="00:00:00.0003510" startTime="2026-11-19T19:07:32.9881618+00:00" endTime="2026-11-19T19:07:32.9882083+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="973a89af-59f2-4594-a8df-0bd15e0dd095" />
+    <UnitTestResult executionId="87ba6a0f-b5a2-44f6-8af7-80d3d5b17009" testId="493e1e95-6415-13c8-ece4-3776d605a967" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_InvalidShowingId_ThrowsException(showingId: -1)" computerName="OLIE" duration="00:00:00.0143850" startTime="2026-11-19T19:07:32.9348179+00:00" endTime="2026-11-19T19:07:32.9923092+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87ba6a0f-b5a2-44f6-8af7-80d3d5b17009" />
+    <UnitTestResult executionId="e3636433-1a51-4d69-bfa4-9391f27c7bf1" testId="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException" computerName="OLIE" duration="00:00:00.0050057" startTime="2026-11-19T19:07:32.9364583+00:00" endTime="2026-11-19T19:07:32.9531161+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3636433-1a51-4d69-bfa4-9391f27c7bf1" />
+    <UnitTestResult executionId="d3992e6f-ddde-4496-b3be-dc68df180f2c" testId="ead37121-4cfd-bdf3-b3d3-fbdbc3529454" testName="CinemaSystem.Tests.BookingFacadeTests.BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice" computerName="OLIE" duration="00:00:01.0902472" startTime="2026-11-19T19:07:32.9365018+00:00" endTime="2026-11-19T19:07:34.0498117+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3992e6f-ddde-4496-b3be-dc68df180f2c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match&#xD;
+Expected: typeof(System.InvalidOperationException)&#xD;
+Actual:   typeof(System.NotImplementedException)&#xD;
+---- System.NotImplementedException : The method or operation is not implemented.</Message>
+          <StackTrace>   at CinemaSystem.Tests.BookingFacadeTests.BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs:line 66&#xD;
+--- End of stack trace from previous location ---&#xD;
+----- Inner Stack Trace -----&#xD;
+   at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken) in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs:line 26&#xD;
+   at CinemaSystem.Tests.BookingFacadeTests.&lt;&gt;c__DisplayClass1_0.&lt;BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice&gt;b__0() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs:line 67</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6d24d80f-b697-4344-ba50-6a42f6a6804d" testId="997226da-096f-0ddf-68be-428b75047f5d" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" computerName="OLIE" duration="00:00:00.0001827" startTime="2026-11-19T19:07:32.9617054+00:00" endTime="2026-11-19T19:07:32.9617686+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6d24d80f-b697-4344-ba50-6a42f6a6804d" />
+    <UnitTestResult executionId="31c3dafe-d6d7-4ea5-9b49-2e6411097a2f" testId="514fab64-da03-60b2-84e6-f905d6d614a7" testName="CinemaSystem.Tests.TicketPriceCalculatorTests.SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" computerName="OLIE" duration="00:00:00.0140042" startTime="2026-11-19T19:07:32.9365733+00:00" endTime="2026-11-19T19:07:32.9906983+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="31c3dafe-d6d7-4ea5-9b49-2e6411097a2f" />
+    <UnitTestResult executionId="c989979a-9f94-4cc7-a0e2-e46104dcc1a0" testId="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" computerName="OLIE" duration="00:00:00.0001015" startTime="2026-11-19T19:07:32.9895612+00:00" endTime="2026-11-19T19:07:32.9895936+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c989979a-9f94-4cc7-a0e2-e46104dcc1a0" />
+    <UnitTestResult executionId="891b4c6f-8410-4933-bf63-09f7fddb99b6" testId="9b3c55d8-8441-acab-32d3-bec20803ed4a" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_TwoTickets_HaveDifferentIds" computerName="OLIE" duration="00:00:00.0001061" startTime="2026-11-19T19:07:32.9927301+00:00" endTime="2026-11-19T19:07:32.9927631+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="891b4c6f-8410-4933-bf63-09f7fddb99b6" />
+    <UnitTestResult executionId="2dbd626f-33dc-44f2-a3f0-3c935d87c312" testId="97939f68-7242-f4a9-1874-18dd160d7f16" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" computerName="OLIE" duration="00:00:00.0001100" startTime="2026-11-19T19:07:32.9893037+00:00" endTime="2026-11-19T19:07:32.9893402+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2dbd626f-33dc-44f2-a3f0-3c935d87c312" />
+    <UnitTestResult executionId="9b9a0513-2312-4e57-bf3c-83d937a1852d" testId="e5139c27-c7ed-579c-7dd6-108945552635" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" computerName="OLIE" duration="00:00:00.0001260" startTime="2026-11-19T19:07:32.9894311+00:00" endTime="2026-11-19T19:07:32.9894672+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b9a0513-2312-4e57-bf3c-83d937a1852d" />
+    <UnitTestResult executionId="8b05d630-ea40-4ff7-ab08-afe4b4327146" testId="5f058976-2f51-8384-e21e-30edcf82561f" testName="CinemaSystem.Tests.BookingFacadeTests.BookAsync_PricingServiceFails_DoesNotSaveBooking" computerName="OLIE" duration="00:00:00.0568065" startTime="2026-11-19T19:07:34.0820909+00:00" endTime="2026-11-19T19:07:34.1386394+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b05d630-ea40-4ff7-ab08-afe4b4327146">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match&#xD;
+Expected: typeof(System.Net.Http.HttpRequestException)&#xD;
+Actual:   typeof(System.NotImplementedException)&#xD;
+---- System.NotImplementedException : The method or operation is not implemented.</Message>
+          <StackTrace>   at CinemaSystem.Tests.BookingFacadeTests.BookAsync_PricingServiceFails_DoesNotSaveBooking() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs:line 85&#xD;
+--- End of stack trace from previous location ---&#xD;
+----- Inner Stack Trace -----&#xD;
+   at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken) in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs:line 26&#xD;
+   at CinemaSystem.Tests.BookingFacadeTests.&lt;&gt;c__DisplayClass2_0.&lt;BookAsync_PricingServiceFails_DoesNotSaveBooking&gt;b__0() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs:line 86</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0907a52f-74a4-4f6a-90bd-71a9212e1ff1" testId="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" computerName="OLIE" duration="00:00:00.0001171" startTime="2026-11-19T19:07:32.9897985+00:00" endTime="2026-11-19T19:07:32.9898446+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0907a52f-74a4-4f6a-90bd-71a9212e1ff1" />
+    <UnitTestResult executionId="0d4bbba6-f758-4916-abb1-3124e9b1c6fe" testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" testName="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" computerName="OLIE" duration="00:00:00.0064485" startTime="2026-11-19T19:07:32.9365310+00:00" endTime="2026-11-19T19:07:32.9487145+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d4bbba6-f758-4916-abb1-3124e9b1c6fe" />
+    <UnitTestResult executionId="54741d1a-90aa-449c-8261-e2e005de6475" testId="dab929bc-4a9d-f451-8941-6a59fb7a14a0" testName="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_AdultCreator_ReturnsAdultTicket" computerName="OLIE" duration="00:00:00.0003233" startTime="2026-11-19T19:07:32.9926155+00:00" endTime="2026-11-19T19:07:32.9926518+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54741d1a-90aa-449c-8261-e2e005de6475" />
+    <UnitTestResult executionId="2364123f-63c4-45df-be6e-dcd8a3bb0f70" testId="0695134e-bdc9-0059-ea93-c50138a13b82" testName="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" computerName="OLIE" duration="00:00:00.0139775" startTime="2026-11-19T19:07:32.9363300+00:00" endTime="2026-11-19T19:07:32.9921869+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2364123f-63c4-45df-be6e-dcd8a3bb0f70" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CinemaSystem.Tests.BookingFacadeTests.BookAsync_EnoughSeats_SavesBookingAndTickets" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="d44bff3b-839b-f6c2-0092-cd87b3a6f033">
+      <Execution id="11594f6f-35e8-41dc-88f6-2505583c87d5" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.BookingFacadeTests" name="BookAsync_EnoughSeats_SavesBookingAndTickets" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.BookingFacadeTests.BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ead37121-4cfd-bdf3-b3d3-fbdbc3529454">
+      <Execution id="d3992e6f-ddde-4496-b3be-dc68df180f2c" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.BookingFacadeTests" name="BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="97939f68-7242-f4a9-1874-18dd160d7f16">
+      <Execution id="2dbd626f-33dc-44f2-a3f0-3c935d87c312" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="229db8c8-f33e-ce29-fecf-0893c76d11af">
+      <Execution id="e3463682-f591-4b34-b605-3926a75c0212" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_InvalidShowingId_ThrowsException(showingId: -1)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="493e1e95-6415-13c8-ece4-3776d605a967">
+      <Execution id="87ba6a0f-b5a2-44f6-8af7-80d3d5b17009" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_InvalidShowingId_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.BookingFacadeTests.BookAsync_PricingServiceFails_DoesNotSaveBooking" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="5f058976-2f51-8384-e21e-30edcf82561f">
+      <Execution id="8b05d630-ea40-4ff7-ab08-afe4b4327146" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.BookingFacadeTests" name="BookAsync_PricingServiceFails_DoesNotSaveBooking" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe">
+      <Execution id="0907a52f-74a4-4f6a-90bd-71a9212e1ff1" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4">
+      <Execution id="c989979a-9f94-4cc7-a0e2-e46104dcc1a0" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="997226da-096f-0ddf-68be-428b75047f5d">
+      <Execution id="6d24d80f-b697-4344-ba50-6a42f6a6804d" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: 101)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="5b41f31e-23f7-5255-0818-619832c13708">
+      <Execution id="973a89af-59f2-4594-a8df-0bd15e0dd095" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_InvalidOccupancy_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24">
+      <Execution id="e3636433-1a51-4d69-bfa4-9391f27c7bf1" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NegativeBasePrice_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeQuantity_ThrowsException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="9e00a5d3-9d5e-3e12-9937-783254f1456d">
+      <Execution id="94e4c55f-09a0-4aaa-b375-2a3c98341157" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NegativeQuantity_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_InvalidShowingId_ThrowsException(showingId: 0)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="e620ea12-f51d-18e2-ab34-5dd629d824c1">
+      <Execution id="feb160f9-ea83-4a61-9082-4f5885b3c278" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_InvalidShowingId_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="3588f11d-9bf9-ffd0-05f2-abd2b326225e">
+      <Execution id="03f3138b-dbe3-4f3e-9d86-98b12aa231bd" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_TwoTickets_HaveDifferentIds" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="9b3c55d8-8441-acab-32d3-bec20803ed4a">
+      <Execution id="891b4c6f-8410-4933-bf63-09f7fddb99b6" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_TwoTickets_HaveDifferentIds" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ce83ff2c-094f-148b-a34a-1a71f1bd7616">
+      <Execution id="0d4bbba6-f758-4916-abb1-3124e9b1c6fe" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.StudentPricingStrategyTests" name="CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_AdultCreator_ReturnsAdultTicket" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="dab929bc-4a9d-f451-8941-6a59fb7a14a0">
+      <Execution id="54741d1a-90aa-449c-8261-e2e005de6475" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_AdultCreator_ReturnsAdultTicket" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_StudentCreator_ReturnsStudentTicket" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="773a7c40-1652-aa1a-23f6-638a685100a9">
+      <Execution id="d8595f85-9bf9-4623-bb77-444395cc6e78" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_StudentCreator_ReturnsStudentTicket" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="0695134e-bdc9-0059-ea93-c50138a13b82">
+      <Execution id="2364123f-63c4-45df-be6e-dcd8a3bb0f70" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.ChildPricingStrategyTests" name="CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketPriceCalculatorTests.SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="514fab64-da03-60b2-84e6-f905d6d614a7">
+      <Execution id="31c3dafe-d6d7-4ea5-9b49-2e6411097a2f" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketPriceCalculatorTests" name="SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="e5139c27-c7ed-579c-7dd6-108945552635">
+      <Execution id="9b9a0513-2312-4e57-bf3c-83d937a1852d" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: -1)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="99be1bda-7016-6c67-d4be-7cf265ec2eed">
+      <Execution id="49db16ac-4bb4-40b1-9d99-bcfdac6d86ec" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_InvalidOccupancy_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ac9b6379-020d-d440-40c3-4986190df5fd">
+      <Execution id="e190d2d3-998e-4e24-bfa1-79640825d0e7" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_NegativePrice_ThrowsException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="b4b96f02-ce2c-9f3c-4f41-a72369cecea6">
+      <Execution id="966bf8f7-16bf-41da-be91-ce42d1b2aecc" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_NegativePrice_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketCreatorTests.IssueTicket_ChildCreator_ReturnsChildTicket" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="4fa9f841-0f5e-944b-fd2e-88a6efb504c2">
+      <Execution id="c52e95ba-f50d-4275-886c-701d1a2d9d3b" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketCreatorTests" name="IssueTicket_ChildCreator_ReturnsChildTicket" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="b42ff467-af5a-9b93-255e-2b06ea4b45e7">
+      <Execution id="3ac83681-d63f-45a8-8d1d-8e29f00d98bc" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d44bff3b-839b-f6c2-0092-cd87b3a6f033" executionId="11594f6f-35e8-41dc-88f6-2505583c87d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4fa9f841-0f5e-944b-fd2e-88a6efb504c2" executionId="c52e95ba-f50d-4275-886c-701d1a2d9d3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9e00a5d3-9d5e-3e12-9937-783254f1456d" executionId="94e4c55f-09a0-4aaa-b375-2a3c98341157" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3588f11d-9bf9-ffd0-05f2-abd2b326225e" executionId="03f3138b-dbe3-4f3e-9d86-98b12aa231bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e620ea12-f51d-18e2-ab34-5dd629d824c1" executionId="feb160f9-ea83-4a61-9082-4f5885b3c278" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4b96f02-ce2c-9f3c-4f41-a72369cecea6" executionId="966bf8f7-16bf-41da-be91-ce42d1b2aecc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="229db8c8-f33e-ce29-fecf-0893c76d11af" executionId="e3463682-f591-4b34-b605-3926a75c0212" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="773a7c40-1652-aa1a-23f6-638a685100a9" executionId="d8595f85-9bf9-4623-bb77-444395cc6e78" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99be1bda-7016-6c67-d4be-7cf265ec2eed" executionId="49db16ac-4bb4-40b1-9d99-bcfdac6d86ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac9b6379-020d-d440-40c3-4986190df5fd" executionId="e190d2d3-998e-4e24-bfa1-79640825d0e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b42ff467-af5a-9b93-255e-2b06ea4b45e7" executionId="3ac83681-d63f-45a8-8d1d-8e29f00d98bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b41f31e-23f7-5255-0818-619832c13708" executionId="973a89af-59f2-4594-a8df-0bd15e0dd095" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="493e1e95-6415-13c8-ece4-3776d605a967" executionId="87ba6a0f-b5a2-44f6-8af7-80d3d5b17009" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24" executionId="e3636433-1a51-4d69-bfa4-9391f27c7bf1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ead37121-4cfd-bdf3-b3d3-fbdbc3529454" executionId="d3992e6f-ddde-4496-b3be-dc68df180f2c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="997226da-096f-0ddf-68be-428b75047f5d" executionId="6d24d80f-b697-4344-ba50-6a42f6a6804d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="514fab64-da03-60b2-84e6-f905d6d614a7" executionId="31c3dafe-d6d7-4ea5-9b49-2e6411097a2f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4" executionId="c989979a-9f94-4cc7-a0e2-e46104dcc1a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b3c55d8-8441-acab-32d3-bec20803ed4a" executionId="891b4c6f-8410-4933-bf63-09f7fddb99b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="97939f68-7242-f4a9-1874-18dd160d7f16" executionId="2dbd626f-33dc-44f2-a3f0-3c935d87c312" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5139c27-c7ed-579c-7dd6-108945552635" executionId="9b9a0513-2312-4e57-bf3c-83d937a1852d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f058976-2f51-8384-e21e-30edcf82561f" executionId="8b05d630-ea40-4ff7-ab08-afe4b4327146" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe" executionId="0907a52f-74a4-4f6a-90bd-71a9212e1ff1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" executionId="0d4bbba6-f758-4916-abb1-3124e9b1c6fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dab929bc-4a9d-f451-8941-6a59fb7a14a0" executionId="54741d1a-90aa-449c-8261-e2e005de6475" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0695134e-bdc9-0059-ea93-c50138a13b82" executionId="2364123f-63c4-45df-be6e-dcd8a3bb0f70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="26" executed="26" passed="23" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.10)&#xD;
+[xUnit.net 00:00:00.23]   Discovering: CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.28]   Discovered:  CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.31]   Starting:    CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:01.45]       Assert.Throws() Failure: Exception type was not an exact match&#xD;
+[xUnit.net 00:00:01.45]       Expected: typeof(System.InvalidOperationException)&#xD;
+[xUnit.net 00:00:01.45]       Actual:   typeof(System.NotImplementedException)&#xD;
+[xUnit.net 00:00:01.45]       ---- System.NotImplementedException : The method or operation is not implemented.&#xD;
+[xUnit.net 00:00:01.45]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.46]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs(66,0): at CinemaSystem.Tests.BookingFacadeTests.BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice()&#xD;
+[xUnit.net 00:00:01.46]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.46]         ----- Inner Stack Trace -----&#xD;
+[xUnit.net 00:00:01.46]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs(26,0): at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken)&#xD;
+[xUnit.net 00:00:01.46]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs(67,0): at CinemaSystem.Tests.BookingFacadeTests.&lt;&gt;c__DisplayClass1_0.&lt;BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice&gt;b__0()&#xD;
+[xUnit.net 00:00:01.48]       System.NotImplementedException : The method or operation is not implemented.&#xD;
+[xUnit.net 00:00:01.48]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.48]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs(26,0): at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken)&#xD;
+[xUnit.net 00:00:01.48]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs(21,0): at CinemaSystem.Tests.BookingFacadeTests.BookAsync_EnoughSeats_SavesBookingAndTickets()&#xD;
+[xUnit.net 00:00:01.48]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.54]       Assert.Throws() Failure: Exception type was not an exact match&#xD;
+[xUnit.net 00:00:01.54]       Expected: typeof(System.Net.Http.HttpRequestException)&#xD;
+[xUnit.net 00:00:01.54]       Actual:   typeof(System.NotImplementedException)&#xD;
+[xUnit.net 00:00:01.54]       ---- System.NotImplementedException : The method or operation is not implemented.&#xD;
+[xUnit.net 00:00:01.54]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.54]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs(85,0): at CinemaSystem.Tests.BookingFacadeTests.BookAsync_PricingServiceFails_DoesNotSaveBooking()&#xD;
+[xUnit.net 00:00:01.54]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.54]         ----- Inner Stack Trace -----&#xD;
+[xUnit.net 00:00:01.54]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem.Booking.Api\Services\BookingFacade.cs(26,0): at CinemaSystem.Booking.Api.Services.BookingFacade.BookAsync(Int32 showingId, String ticketType, Int32 quantity, CancellationToken cancellationToken)&#xD;
+[xUnit.net 00:00:01.54]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\BookingFacadeTests.cs(86,0): at CinemaSystem.Tests.BookingFacadeTests.&lt;&gt;c__DisplayClass2_0.&lt;BookAsync_PricingServiceFails_DoesNotSaveBooking&gt;b__0()&#xD;
+[xUnit.net 00:00:01.54]   Finished:    CinemaSystem.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T19:07:34.0531263+00:00">
+        <Text>[xUnit.net 00:00:01.45]     CinemaSystem.Tests.BookingFacadeTests.BookAsync_NotEnoughSeats_DoesNotSaveOrRequestPrice [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T19:07:34.0818954+00:00">
+        <Text>[xUnit.net 00:00:01.48]     CinemaSystem.Tests.BookingFacadeTests.BookAsync_EnoughSeats_SavesBookingAndTickets [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T19:07:34.1390171+00:00">
+        <Text>[xUnit.net 00:00:01.54]     CinemaSystem.Tests.BookingFacadeTests.BookAsync_PricingServiceFails_DoesNotSaveBooking [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

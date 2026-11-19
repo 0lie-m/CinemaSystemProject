@@ -1,8 +1,10 @@
+using CinemaSystem.Booking.Api.Contracts;
 using CinemaSystem.Booking.Api.Data;
+using CinemaSystem.Booking.Api.Models;
+using CinemaSystem.Booking.Api.Pricing;
+using CinemaSystem.Booking.Api.Services;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using CinemaSystem.Booking.Api.Contracts;
-using CinemaSystem.Booking.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,17 @@ var connectionString = new SqliteConnectionStringBuilder
 
 builder.Services.AddDbContext<CinemaDbContext>(options =>
     options.UseSqlite(connectionString.ToString()));
+
+builder.Services.AddHttpClient<IPricingClient, PricingClient>(client =>
+{
+    client.BaseAddress = new Uri(
+        builder.Configuration["Services:PricingApi"]
+        ?? "http://localhost:5104");
+
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
+
+builder.Services.AddScoped<BookingFacade>();
 
 var app = builder.Build();
 
@@ -153,7 +166,13 @@ app.MapGet("/api/showings", async (CinemaDbContext db) =>
             ScreenName = showing.Screen.Name,
             showing.StartTime,
             showing.EndTime,
-            showing.BasePrice
+            showing.BasePrice,
+            Capacity = showing.Screen.Capacity,
+            SeatsSold = db.BookedTickets.Count(
+                ticket => ticket.Booking.ShowingId == showing.Id),
+            AvailableSeats = showing.Screen.Capacity -
+                db.BookedTickets.Count(
+                    ticket => ticket.Booking.ShowingId == showing.Id)
         })
         .ToListAsync();
 
@@ -183,8 +202,8 @@ app.MapPost("/api/showings", async Task<IResult> (
             new { error = "Base price must be non-negative with at most two decimal places." });
     }
 
-    // Keep the availability check and insertion in one transaction.
-    await using var transaction = await db.Database.BeginTransactionAsync();
+    await using var transaction =
+        await db.Database.BeginTransactionAsync();
 
     var movie = await db.Movies.FindAsync(request.MovieId);
 
@@ -243,6 +262,115 @@ app.MapPost("/api/showings", async Task<IResult> (
         showing.EndTime,
         showing.BasePrice
     });
+});
+
+app.MapGet("/api/bookings", async (CinemaDbContext db) =>
+{
+    var bookings = await db.Bookings
+        .AsNoTracking()
+        .OrderByDescending(booking => booking.CreatedAtUtc)
+        .Select(booking => new
+        {
+            booking.Id,
+            booking.ShowingId,
+            MovieTitle = booking.Showing.Movie.Title,
+            ScreenName = booking.Showing.Screen.Name,
+            booking.Showing.StartTime,
+            booking.CreatedAtUtc,
+            booking.TotalPrice,
+            Quantity = booking.Tickets.Count
+        })
+        .ToListAsync();
+
+    return Results.Ok(bookings);
+});
+
+app.MapGet("/api/bookings/{id:int}", async Task<IResult> (
+    int id, CinemaDbContext db) =>
+{
+    var booking = await db.Bookings
+        .AsNoTracking()
+        .Where(item => item.Id == id)
+        .Select(item => new
+        {
+            item.Id,
+            item.ShowingId,
+            MovieTitle = item.Showing.Movie.Title,
+            ScreenName = item.Showing.Screen.Name,
+            item.Showing.StartTime,
+            item.CreatedAtUtc,
+            item.TotalPrice,
+            Quantity = item.Tickets.Count,
+            Tickets = item.Tickets.Select(ticket => new
+            {
+                ticket.Id,
+                ticket.TicketType,
+                ticket.PricePaid
+            }).ToList()
+        })
+        .SingleOrDefaultAsync();
+
+    if (booking is null)
+    {
+        return Results.NotFound(new { error = "Booking not found." });
+    }
+
+    return Results.Ok(booking);
+});
+
+app.MapPost("/api/bookings", async Task<IResult> (
+    CreateBookingRequest request,
+    BookingFacade facade,
+    CancellationToken cancellationToken) =>
+{
+    try
+    {
+        var booking = await facade.BookAsync(
+            request.ShowingId,
+            request.TicketType ?? string.Empty,
+            request.Quantity,
+            cancellationToken);
+
+        return Results.Created($"/api/bookings/{booking.Id}", new
+        {
+            booking.Id,
+            booking.ShowingId,
+            booking.CreatedAtUtc,
+            booking.TotalPrice,
+            Quantity = booking.Tickets.Count,
+            Tickets = booking.Tickets.Select(ticket => new
+            {
+                ticket.Id,
+                ticket.TicketType,
+                ticket.PricePaid
+            }).ToArray()
+        });
+    }
+    catch (ArgumentException exception)
+    {
+        return Results.BadRequest(new { error = exception.Message });
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new { error = exception.Message });
+    }
+    catch (HttpRequestException)
+    {
+        return Results.Json(
+            new { error = "The pricing service is unavailable. Please try again." },
+            statusCode: StatusCodes.Status503ServiceUnavailable);
+    }
+    catch (OperationCanceledException)
+        when (!cancellationToken.IsCancellationRequested)
+    {
+        return Results.Json(
+            new { error = "The pricing service timed out. Please try again." },
+            statusCode: StatusCodes.Status504GatewayTimeout);
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.Conflict(new { error = exception.Message });
+    }
 });
 
 app.Run();

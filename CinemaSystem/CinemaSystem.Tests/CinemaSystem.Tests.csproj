@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CinemaSystem.Core\CinemaSystem.Core.csproj" />
     <ProjectReference Include="..\..\CinemaSystem.Pricing.Api\CinemaSystem.Pricing.Api.csproj" />
+    <ProjectReference Include="..\..\CinemaSystem.Booking.Api\CinemaSystem.Booking.Api.csproj" />
   </ItemGroup>
 
 </Project>

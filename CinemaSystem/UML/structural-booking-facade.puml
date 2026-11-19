@@ -1,0 +1,76 @@
+@startuml structural-booking-facade
+allowmixing
+title Cinema System - Booking Facade
+
+skinparam classAttributeIconSize 0
+hide empty fields
+
+class "Booking API endpoint" as BookingEndpoint <<Client>>
+
+class BookingFacade <<Facade>> {
+    + BookAsync(showingId : int, ticketType : string, quantity : int) : Task<Booking>
+}
+
+interface IPricingClient {
+    + GetQuoteAsync(request : PricingQuoteRequest) : Task<PricingQuoteResponse>
+}
+
+class PricingClient {
+    - _httpClient : HttpClient
+    + GetQuoteAsync(request : PricingQuoteRequest) : Task<PricingQuoteResponse>
+}
+
+class CinemaDbContext {
+    + Bookings : DbSet<Booking>
+    + BookedTickets : DbSet<BookedTicket>
+    + Showings : DbSet<Showing>
+}
+
+abstract class TicketCreator <<Creator>> {
+    + IssueTicket(showingId : int, pricePaid : decimal) : Ticket
+    # CreateTicket(showingId : int, pricePaid : decimal) : Ticket
+}
+
+class AdultTicketCreator
+class StudentTicketCreator
+class ChildTicketCreator
+
+class Booking {
+    + Id : int
+    + ShowingId : int
+    + CreatedAtUtc : DateTime
+    + TotalPrice : decimal
+}
+
+class BookedTicket {
+    + Id : Guid
+    + BookingId : int
+    + TicketType : string
+    + PricePaid : decimal
+}
+
+cloud "Pricing API" as PricingApi
+
+BookingEndpoint --> BookingFacade : calls
+BookingFacade --> IPricingClient : requests price
+BookingFacade --> CinemaDbContext : checks seats and saves
+BookingFacade ..> TicketCreator : selects and uses
+BookingFacade ..> Booking : creates
+BookingFacade ..> BookedTicket : maps issued tickets
+
+IPricingClient <|.. PricingClient
+PricingClient --> PricingApi : HTTP / JSON
+
+TicketCreator <|-- AdultTicketCreator
+TicketCreator <|-- StudentTicketCreator
+TicketCreator <|-- ChildTicketCreator
+
+Booking "1" *-- "0..*" BookedTicket : contains
+
+note bottom of BookingFacade
+Coordinates availability checks,
+remote pricing, ticket creation,
+and transactional persistence.
+end note
+
+@enduml
