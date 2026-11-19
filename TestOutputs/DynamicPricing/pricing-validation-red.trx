@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2cb0da20-2836-496d-b729-1a71c76d7ead" name="olive@OLIE 2026-11-19 17:39:03" runUser="OLIE\olive" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-19T17:39:03.6351542+00:00" queuing="2026-11-19T17:39:03.6351550+00:00" start="2026-11-19T17:39:02.9572108+00:00" finish="2026-11-19T17:39:03.6654475+00:00" />
+  <TestSettings name="default" id="f7032c41-bf17-419a-8639-ce6a7a96714e">
+    <Deployment runDeploymentRoot="olive_OLIE_2026-11-19_17_39_03" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="86c03aa0-27f7-488c-bb50-8430238be78b" testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" testName="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" computerName="OLIE" duration="00:00:00.0059564" startTime="2026-11-19T17:39:03.5537990+00:00" endTime="2026-11-19T17:39:03.5685223+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="86c03aa0-27f7-488c-bb50-8430238be78b" />
+    <UnitTestResult executionId="c8ed3b9f-e33a-4d2f-8789-3041811c2f8c" testId="5b41f31e-23f7-5255-0818-619832c13708" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: 101)" computerName="OLIE" duration="00:00:00.0003503" startTime="2026-11-19T17:39:03.5825184+00:00" endTime="2026-11-19T17:39:03.5825836+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8ed3b9f-e33a-4d2f-8789-3041811c2f8c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown&#xD;
+Expected: typeof(System.ArgumentOutOfRangeException)</Message>
+          <StackTrace>   at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Int32 occupancyPercentage) in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs:line 103&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7dc401f6-19de-4c08-85f0-45d008491420" testId="514fab64-da03-60b2-84e6-f905d6d614a7" testName="CinemaSystem.Tests.TicketPriceCalculatorTests.SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" computerName="OLIE" duration="00:00:00.0059296" startTime="2026-11-19T17:39:03.5538421+00:00" endTime="2026-11-19T17:39:03.5649334+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7dc401f6-19de-4c08-85f0-45d008491420" />
+    <UnitTestResult executionId="b03125e8-8fe6-44c9-adfc-bd4ed737c80c" testId="e5139c27-c7ed-579c-7dd6-108945552635" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" computerName="OLIE" duration="00:00:00.0001107" startTime="2026-11-19T17:39:03.6088149+00:00" endTime="2026-11-19T17:39:03.6088484+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b03125e8-8fe6-44c9-adfc-bd4ed737c80c" />
+    <UnitTestResult executionId="c540da1f-58b9-4e5d-9365-298176cb25a7" testId="97939f68-7242-f4a9-1874-18dd160d7f16" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" computerName="OLIE" duration="00:00:00.0001130" startTime="2026-11-19T17:39:03.6086660+00:00" endTime="2026-11-19T17:39:03.6087112+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c540da1f-58b9-4e5d-9365-298176cb25a7" />
+    <UnitTestResult executionId="dcffa494-2057-4a29-ab82-dd5d1c023c99" testId="ac9b6379-020d-d440-40c3-4986190df5fd" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" computerName="OLIE" duration="00:00:00.0045757" startTime="2026-11-19T17:39:03.5537516+00:00" endTime="2026-11-19T17:39:03.5683964+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcffa494-2057-4a29-ab82-dd5d1c023c99" />
+    <UnitTestResult executionId="40788922-1cb8-46e5-896c-9b225e837b43" testId="997226da-096f-0ddf-68be-428b75047f5d" testName="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" computerName="OLIE" duration="00:00:00.0001350" startTime="2026-11-19T17:39:03.5759455+00:00" endTime="2026-11-19T17:39:03.5759867+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40788922-1cb8-46e5-896c-9b225e837b43" />
+    <UnitTestResult executionId="3a0f9105-e2b7-4990-9ca8-c5bbcd3689a8" testId="9e00a5d3-9d5e-3e12-9937-783254f1456d" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeQuantity_ThrowsException" computerName="OLIE" duration="00:00:00.0002299" startTime="2026-11-19T17:39:03.6092961+00:00" endTime="2026-11-19T17:39:03.6093312+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a0f9105-e2b7-4990-9ca8-c5bbcd3689a8" />
+    <UnitTestResult executionId="c71dc7ff-bc30-4f2b-a852-75dab5ea8815" testId="3588f11d-9bf9-ffd0-05f2-abd2b326225e" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" computerName="OLIE" duration="00:00:00.0001028" startTime="2026-11-19T17:39:03.6090640+00:00" endTime="2026-11-19T17:39:03.6091010+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c71dc7ff-bc30-4f2b-a852-75dab5ea8815" />
+    <UnitTestResult executionId="855de30a-6cb3-46e1-aacc-ece76cde977c" testId="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" computerName="OLIE" duration="00:00:00.0001041" startTime="2026-11-19T17:39:03.6091846+00:00" endTime="2026-11-19T17:39:03.6092157+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="855de30a-6cb3-46e1-aacc-ece76cde977c" />
+    <UnitTestResult executionId="e9854b4d-c0db-499d-9868-95a1e5aa9f20" testId="229db8c8-f33e-ce29-fecf-0893c76d11af" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" computerName="OLIE" duration="00:00:00.0001095" startTime="2026-11-19T17:39:03.5823719+00:00" endTime="2026-11-19T17:39:03.5824236+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9854b4d-c0db-499d-9868-95a1e5aa9f20" />
+    <UnitTestResult executionId="62e33781-c2e7-42cf-aba4-f77f5b6a041c" testId="99be1bda-7016-6c67-d4be-7cf265ec2eed" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: -1)" computerName="OLIE" duration="00:00:00.0002263" startTime="2026-11-19T17:39:03.6079352+00:00" endTime="2026-11-19T17:39:03.6080396+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62e33781-c2e7-42cf-aba4-f77f5b6a041c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown&#xD;
+Expected: typeof(System.ArgumentOutOfRangeException)</Message>
+          <StackTrace>   at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Int32 occupancyPercentage) in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs:line 103&#xD;
+   at InvokeStub_DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Object, Span`1)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6266739e-56f6-4e54-a70f-7b06d57425b5" testId="b42ff467-af5a-9b93-255e-2b06ea4b45e7" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" computerName="OLIE" duration="00:00:00.0001512" startTime="2026-11-19T17:39:03.5822259+00:00" endTime="2026-11-19T17:39:03.5822696+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6266739e-56f6-4e54-a70f-7b06d57425b5" />
+    <UnitTestResult executionId="570ba5ca-1626-4d5e-a6a4-f9ad82f5ca37" testId="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException" computerName="OLIE" duration="00:00:00.0055202" startTime="2026-11-19T17:39:03.5523144+00:00" endTime="2026-11-19T17:39:03.5777077+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="570ba5ca-1626-4d5e-a6a4-f9ad82f5ca37">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown&#xD;
+Expected: typeof(System.ArgumentOutOfRangeException)</Message>
+          <StackTrace>   at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException() in C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs:line 90&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="118916a6-129a-460e-b610-0a41e2b243e1" testId="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4" testName="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" computerName="OLIE" duration="00:00:00.0001000" startTime="2026-11-19T17:39:03.6089480+00:00" endTime="2026-11-19T17:39:03.6089803+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="118916a6-129a-460e-b610-0a41e2b243e1" />
+    <UnitTestResult executionId="464fddad-76ab-49ee-968e-3263b75d1af2" testId="0695134e-bdc9-0059-ea93-c50138a13b82" testName="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" computerName="OLIE" duration="00:00:00.0058849" startTime="2026-11-19T17:39:03.5538229+00:00" endTime="2026-11-19T17:39:03.5685007+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="464fddad-76ab-49ee-968e-3263b75d1af2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ac9b6379-020d-d440-40c3-4986190df5fd">
+      <Execution id="dcffa494-2057-4a29-ab82-dd5d1c023c99" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_NegativeQuantity_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="229db8c8-f33e-ce29-fecf-0893c76d11af">
+      <Execution id="e9854b4d-c0db-499d-9868-95a1e5aa9f20" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_ShowingEightyPercentFull_ReturnsTwentyTwoEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="97939f68-7242-f4a9-1874-18dd160d7f16">
+      <Execution id="c540da1f-58b9-4e5d-9365-298176cb25a7" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_BelowEightyPercentFull_NoDemandIncrease" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4">
+      <Execution id="118916a6-129a-460e-b610-0a41e2b243e1" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumMovieTwoStudentTickets_ReturnsNineteenTwenty" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="e5139c27-c7ed-579c-7dd6-108945552635">
+      <Execution id="b03125e8-8fe6-44c9-adfc-bd4ed737c80c" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumMovieTwoAdultTickets_ReturnsTwentyFourEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.AdultPricingStrategyTests.CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="997226da-096f-0ddf-68be-428b75047f5d">
+      <Execution id="40788922-1cb8-46e5-896c-9b225e837b43" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.AdultPricingStrategyTests" name="CalculatePrice_TwoAdultTicketsAtTenEuro_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe">
+      <Execution id="855de30a-6cb3-46e1-aacc-ece76cde977c" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NormalMovieTwoAdultTickets_ReturnsTwentyEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.ChildPricingStrategyTests.CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="0695134e-bdc9-0059-ea93-c50138a13b82">
+      <Execution id="464fddad-76ab-49ee-968e-3263b75d1af2" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.ChildPricingStrategyTests" name="CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeQuantity_ThrowsException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="9e00a5d3-9d5e-3e12-9937-783254f1456d">
+      <Execution id="3a0f9105-e2b7-4990-9ca8-c5bbcd3689a8" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NegativeQuantity_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="3588f11d-9bf9-ffd0-05f2-abd2b326225e">
+      <Execution id="c71dc7ff-bc30-4f2b-a852-75dab5ea8815" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_RoundsUnitPriceBeforeMultiplyingQuantity" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="b42ff467-af5a-9b93-255e-2b06ea4b45e7">
+      <Execution id="6266739e-56f6-4e54-a70f-7b06d57425b5" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_PremiumStudentTicketsAtHighDemand_ReturnsTwentyOneTwelve" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: -1)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="99be1bda-7016-6c67-d4be-7cf265ec2eed">
+      <Execution id="62e33781-c2e7-42cf-aba4-f77f5b6a041c" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_InvalidOccupancy_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: 101)" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="5b41f31e-23f7-5255-0818-619832c13708">
+      <Execution id="c8ed3b9f-e33a-4d2f-8789-3041811c2f8c" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_InvalidOccupancy_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.StudentPricingStrategyTests.CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="ce83ff2c-094f-148b-a34a-1a71f1bd7616">
+      <Execution id="86c03aa0-27f7-488c-bb50-8430238be78b" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.StudentPricingStrategyTests" name="CalculatePrice_TwoStudentTicketsAtTenEuro_ReturnsSixteenEuro" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24">
+      <Execution id="570ba5ca-1626-4d5e-a6a4-f9ad82f5ca37" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.DynamicPricingTests" name="CalculatePrice_NegativeBasePrice_ThrowsException" />
+    </UnitTest>
+    <UnitTest name="CinemaSystem.Tests.TicketPriceCalculatorTests.SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" storage="c:\users\olive\onedrive - munster technological university\year4\spm\cinemasystemproject\cinemasystem\cinemasystem.tests\bin\debug\net10.0\cinemasystem.tests.dll" id="514fab64-da03-60b2-84e6-f905d6d614a7">
+      <Execution id="7dc401f6-19de-4c08-85f0-45d008491420" />
+      <TestMethod codeBase="C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\bin\Debug\net10.0\CinemaSystem.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CinemaSystem.Tests.TicketPriceCalculatorTests" name="SetStrategy_ChangesFromAdultToStudent_UsesSelectedPricing" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ce83ff2c-094f-148b-a34a-1a71f1bd7616" executionId="86c03aa0-27f7-488c-bb50-8430238be78b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b41f31e-23f7-5255-0818-619832c13708" executionId="c8ed3b9f-e33a-4d2f-8789-3041811c2f8c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="514fab64-da03-60b2-84e6-f905d6d614a7" executionId="7dc401f6-19de-4c08-85f0-45d008491420" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5139c27-c7ed-579c-7dd6-108945552635" executionId="b03125e8-8fe6-44c9-adfc-bd4ed737c80c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="97939f68-7242-f4a9-1874-18dd160d7f16" executionId="c540da1f-58b9-4e5d-9365-298176cb25a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac9b6379-020d-d440-40c3-4986190df5fd" executionId="dcffa494-2057-4a29-ab82-dd5d1c023c99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="997226da-096f-0ddf-68be-428b75047f5d" executionId="40788922-1cb8-46e5-896c-9b225e837b43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9e00a5d3-9d5e-3e12-9937-783254f1456d" executionId="3a0f9105-e2b7-4990-9ca8-c5bbcd3689a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3588f11d-9bf9-ffd0-05f2-abd2b326225e" executionId="c71dc7ff-bc30-4f2b-a852-75dab5ea8815" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8fe4d40-7b6b-3e27-0d35-aff0cc108efe" executionId="855de30a-6cb3-46e1-aacc-ece76cde977c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="229db8c8-f33e-ce29-fecf-0893c76d11af" executionId="e9854b4d-c0db-499d-9868-95a1e5aa9f20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99be1bda-7016-6c67-d4be-7cf265ec2eed" executionId="62e33781-c2e7-42cf-aba4-f77f5b6a041c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b42ff467-af5a-9b93-255e-2b06ea4b45e7" executionId="6266739e-56f6-4e54-a70f-7b06d57425b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7038a97d-9ea5-0a5e-44a3-f0d070b1cb24" executionId="570ba5ca-1626-4d5e-a6a4-f9ad82f5ca37" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6ea6d6c-3032-2ba0-88cd-8ee02c2090b4" executionId="118916a6-129a-460e-b610-0a41e2b243e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0695134e-bdc9-0059-ea93-c50138a13b82" executionId="464fddad-76ab-49ee-968e-3263b75d1af2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="16" executed="16" passed="13" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.10)&#xD;
+[xUnit.net 00:00:00.08]   Discovering: CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.13]   Discovered:  CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.15]   Starting:    CinemaSystem.Tests&#xD;
+[xUnit.net 00:00:00.20]       Assert.Throws() Failure: No exception was thrown&#xD;
+[xUnit.net 00:00:00.20]       Expected: typeof(System.ArgumentOutOfRangeException)&#xD;
+[xUnit.net 00:00:00.20]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.21]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs(90,0): at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException()&#xD;
+[xUnit.net 00:00:00.21]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.21]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.21]       Assert.Throws() Failure: No exception was thrown&#xD;
+[xUnit.net 00:00:00.21]       Expected: typeof(System.ArgumentOutOfRangeException)&#xD;
+[xUnit.net 00:00:00.21]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.21]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs(103,0): at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Int32 occupancyPercentage)&#xD;
+[xUnit.net 00:00:00.21]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.21]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.23]       Assert.Throws() Failure: No exception was thrown&#xD;
+[xUnit.net 00:00:00.23]       Expected: typeof(System.ArgumentOutOfRangeException)&#xD;
+[xUnit.net 00:00:00.23]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.23]         C:\Users\olive\OneDrive - Munster Technological University\year4\SPM\CinemaSystemProject\CinemaSystem\CinemaSystem.Tests\DynamicPricingTests.cs(103,0): at CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Int32 occupancyPercentage)&#xD;
+[xUnit.net 00:00:00.23]            at InvokeStub_DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(Object, Span`1)&#xD;
+[xUnit.net 00:00:00.23]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)&#xD;
+[xUnit.net 00:00:00.24]   Finished:    CinemaSystem.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T17:39:03.5799111+00:00">
+        <Text>[xUnit.net 00:00:00.20]     CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_NegativeBasePrice_ThrowsException [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T17:39:03.5828101+00:00">
+        <Text>[xUnit.net 00:00:00.21]     CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: 101) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="OLIE" outcome="Error" timestamp="2026-11-19T17:39:03.6513548+00:00">
+        <Text>[xUnit.net 00:00:00.23]     CinemaSystem.Tests.DynamicPricingTests.CalculatePrice_InvalidOccupancy_ThrowsException(occupancyPercentage: -1) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

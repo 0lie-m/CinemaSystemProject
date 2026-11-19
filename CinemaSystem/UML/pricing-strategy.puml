@@ -1,0 +1,62 @@
+@startuml pricing_strategy_final
+title Cinema System Pricing Strategy Final Design
+
+skinparam classAttributeIconSize 0
+hide empty fields
+
+class DynamicPricingService {
+    + CalculatePrice(strategy : ITicketPricingStrategy, basePrice : decimal, quantity : int, isPremiumMovie : bool, occupancyRate : decimal = 0) : decimal
+}
+
+class TicketPriceCalculator <<Context>> {
+    - strategy : ITicketPricingStrategy
+    + TicketPriceCalculator(strategy : ITicketPricingStrategy)
+    + SetStrategy(strategy : ITicketPricingStrategy) : void
+    + CalculatePrice(basePrice : decimal, quantity : int) : decimal
+}
+
+interface ITicketPricingStrategy <<Strategy>> {
+    + CalculatePrice(basePrice : decimal, quantity : int) : decimal
+}
+
+class AdultPricingStrategy <<ConcreteStrategy>> {
+    + CalculatePrice(basePrice : decimal, quantity : int) : decimal
+}
+
+class StudentPricingStrategy <<ConcreteStrategy>> {
+    + CalculatePrice(basePrice : decimal, quantity : int) : decimal
+}
+
+class ChildPricingStrategy <<ConcreteStrategy>> {
+    + CalculatePrice(basePrice : decimal, quantity : int) : decimal
+}
+
+DynamicPricingService ..> TicketPriceCalculator : creates and uses
+DynamicPricingService ..> ITicketPricingStrategy : receives
+TicketPriceCalculator --> "1" ITicketPricingStrategy : delegates to
+
+AdultPricingStrategy ..|> ITicketPricingStrategy
+StudentPricingStrategy ..|> ITicketPricingStrategy
+ChildPricingStrategy ..|> ITicketPricingStrategy
+
+note bottom of DynamicPricingService
+    Add EUR 2 for a premium movie.
+    Apply a 10% increase at occupancy >= 80%.
+    Apply the selected ticket strategy.
+    Round unit price to two decimal places.
+    Multiply by quantity.
+end note
+
+note bottom of AdultPricingStrategy
+    Full adjusted price
+end note
+
+note bottom of StudentPricingStrategy
+    20% discount
+end note
+
+note bottom of ChildPricingStrategy
+    30% discount
+end note
+
+@enduml

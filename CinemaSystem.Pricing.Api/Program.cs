@@ -1,12 +1,13 @@
+using CinemaSystem.Pricing.Api.Services;
+using CinemaSystem.Pricing.Api.Strategies;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<DynamicPricingService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -14,28 +15,69 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapPost("/api/pricing/quote", IResult (
+    PricingRequest request,
+    DynamicPricingService pricingService) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    if (request.Quantity <= 0)
+    {
+        return Results.BadRequest(
+            new { error = "Quantity must be greater than zero." });
+    }
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    if (request.BasePrice < 0)
+    {
+        return Results.BadRequest(
+            new { error = "Base price cannot be negative." });
+    }
+
+    if (request.OccupancyRate < 0m || request.OccupancyRate > 1m)
+    {
+        return Results.BadRequest(
+            new { error = "Occupancy must be between 0 and 1." });
+    }
+
+    ITicketPricingStrategy? strategy =
+        request.TicketType?.Trim().ToLowerInvariant() switch
+        {
+            "adult" => new AdultPricingStrategy(),
+            "student" => new StudentPricingStrategy(),
+            "child" => new ChildPricingStrategy(),
+            _ => null
+        };
+
+    if (strategy is null)
+    {
+        return Results.BadRequest(
+            new { error = "Ticket type must be adult, student or child." });
+    }
+
+    decimal totalPrice = pricingService.CalculatePrice(
+        strategy,
+        request.BasePrice,
+        request.Quantity,
+        request.IsPremiumMovie,
+        request.OccupancyRate);
+
+    decimal unitPrice = totalPrice / request.Quantity;
+
+    return Results.Ok(new PricingResponse(
+        unitPrice,
+        request.Quantity,
+        totalPrice));
 })
-.WithName("GetWeatherForecast");
+.WithName("GetTicketPriceQuote");
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+public record PricingRequest(
+    string? TicketType,
+    decimal BasePrice,
+    int Quantity,
+    bool IsPremiumMovie,
+    decimal OccupancyRate);
+
+public record PricingResponse(
+    decimal UnitPrice,
+    int Quantity,
+    decimal TotalPrice);
