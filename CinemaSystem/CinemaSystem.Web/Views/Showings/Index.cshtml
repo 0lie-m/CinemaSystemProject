@@ -1,0 +1,82 @@
+@model List<CinemaSystem.Web.Models.ShowingViewModel>
+
+@{
+    ViewData["Title"] = "Showings";
+}
+
+<div class="d-flex justify-content-between align-items-center mt-4 mb-4">
+    <div>
+        <h1>Showings</h1>
+        <p class="text-muted mb-0">
+            View the schedule and remaining seats.
+        </p>
+    </div>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Schedule showing
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] is string message)
+{
+    <div class="alert alert-success" role="status">@message</div>
+}
+
+@if (ViewBag.ApiError is string error)
+{
+    <div class="alert alert-warning" role="alert">
+        <p>@error</p>
+        <a asp-action="Index" class="btn btn-outline-dark btn-sm">
+            Try again
+        </a>
+    </div>
+}
+else if (Model.Count == 0)
+{
+    <div class="alert alert-info">No showings have been scheduled yet.</div>
+}
+else
+{
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Movie</th>
+                        <th scope="col">Screen</th>
+                        <th scope="col">Starts</th>
+                        <th scope="col">Ends</th>
+                        <th scope="col">Base price</th>
+                        <th scope="col">Seats available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var showing in Model)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@showing.MovieTitle</td>
+                            <td>@showing.ScreenName</td>
+                            <td>
+                                @showing.StartTime.ToString("dd MMM yyyy HH:mm")
+                            </td>
+                            <td>
+                                @showing.EndTime.ToString("dd MMM yyyy HH:mm")
+                            </td>
+                            <td>€@showing.BasePrice.ToString("0.00")</td>
+                            <td>
+                                @showing.AvailableSeats / @showing.Capacity
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<p class="text-muted small mt-3">
+    Times are cinema local time. Final ticket prices include applicable
+    discounts and premium or demand adjustments.
+</p>
+
+<a asp-controller="Home" asp-action="Index">Back to dashboard</a>
