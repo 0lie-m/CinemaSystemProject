@@ -1,0 +1,75 @@
+@startuml factory_method
+title Cinema System Ticket Factory Method
+
+skinparam classAttributeIconSize 0
+hide empty fields
+top to bottom direction
+
+abstract class TicketCreator <<Creator>> {
+    + IssueTicket(showingId : int, pricePaid : decimal) : Ticket
+    # {abstract} CreateTicket(showingId : int, pricePaid : decimal) : Ticket
+}
+
+class AdultTicketCreator <<ConcreteCreator>> {
+    # CreateTicket(showingId : int, pricePaid : decimal) : Ticket
+}
+
+class StudentTicketCreator <<ConcreteCreator>> {
+    # CreateTicket(showingId : int, pricePaid : decimal) : Ticket
+}
+
+class ChildTicketCreator <<ConcreteCreator>> {
+    # CreateTicket(showingId : int, pricePaid : decimal) : Ticket
+}
+
+abstract class Ticket <<Product>> {
+    + Id : Guid {readOnly}
+    + ShowingId : int {readOnly}
+    + PricePaid : decimal {readOnly}
+    # Ticket(showingId : int, pricePaid : decimal)
+}
+
+class AdultTicket <<ConcreteProduct>> {
+    + AdultTicket(showingId : int, pricePaid : decimal)
+}
+
+class StudentTicket <<ConcreteProduct>> {
+    + StudentTicket(showingId : int, pricePaid : decimal)
+}
+
+class ChildTicket <<ConcreteProduct>> {
+    + ChildTicket(showingId : int, pricePaid : decimal)
+}
+
+TicketCreator <|-- AdultTicketCreator
+TicketCreator <|-- StudentTicketCreator
+TicketCreator <|-- ChildTicketCreator
+
+Ticket <|-- AdultTicket
+Ticket <|-- StudentTicket
+Ticket <|-- ChildTicket
+
+TicketCreator ..> Ticket : returns
+AdultTicketCreator ..> AdultTicket : creates
+StudentTicketCreator ..> StudentTicket : creates
+ChildTicketCreator ..> ChildTicket : creates
+
+note top of TicketCreator
+    IssueTicket validates the showing and price,
+    then calls the overridden CreateTicket method.
+end note
+
+note bottom of Ticket
+    Each ticket receives a new Guid.
+    PricePaid stores the supplied price.
+    Pricing is calculated separately.
+end note
+
+legend bottom
+    + Public
+    # Protected
+    Hollow triangle arrow: inherits from
+    Dashed arrow: dependency
+endlegend
+
+@enduml
