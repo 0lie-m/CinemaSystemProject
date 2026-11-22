@@ -1,0 +1,72 @@
+@model CinemaSystem.Web.Models.BookingFormViewModel
+
+@{
+    ViewData["Title"] = "Sell Tickets";
+}
+
+<h1 class="mt-4">Sell tickets</h1>
+<p class="text-muted">
+    Choose your tickets, then review the price before confirming.
+</p>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <form asp-action="Quote" method="post">
+                    <div asp-validation-summary="All"
+                         class="text-danger mb-3"
+                         role="alert"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="ShowingId" class="form-label"></label>
+                        <select asp-for="ShowingId"
+                                asp-items="Model.Showings"
+                                class="form-select">
+                            <option value="">Choose a showing</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="TicketType" class="form-label"></label>
+                        <select asp-for="TicketType" class="form-select">
+                            <option value="adult">Adult</option>
+                            <option value="student">Student — 20% discount</option>
+                            <option value="child">Child — 30% discount</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Quantity" class="form-label"></label>
+                        <input asp-for="Quantity"
+                               type="number"
+                               min="1"
+                               step="1"
+                               class="form-control" />
+                    </div>
+
+                    @if (Model.Showings.Count > 0)
+                    {
+                        <button type="submit" class="btn btn-primary">
+                            Get price quote
+                        </button>
+                    }
+                    else
+                    {
+                        <p>No available showings could be listed.</p>
+                    }
+
+                    <a asp-controller="Showings"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary">
+                        Back to showings
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,91 @@
+@model List<CinemaSystem.Web.Models.BookingDetailsViewModel>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<div class="d-flex justify-content-between align-items-center mt-4 mb-4">
+    <div>
+        <h1>Bookings</h1>
+        <p class="text-muted mb-0">
+            View saved bookings and their ticket details.
+        </p>
+    </div>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Sell tickets
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] is string success)
+{
+    <div class="alert alert-success" role="status">@success</div>
+}
+
+@if (TempData["WarningMessage"] is string warning)
+{
+    <div class="alert alert-warning" role="alert">@warning</div>
+}
+
+@if (ViewBag.ApiError is string error)
+{
+    <div class="alert alert-warning" role="alert">
+        <p>@error</p>
+        <a asp-action="Index" class="btn btn-outline-dark btn-sm">
+            Try again
+        </a>
+    </div>
+}
+else if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        No bookings have been made yet.
+    </div>
+}
+else
+{
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Booking</th>
+                        <th scope="col">Movie</th>
+                        <th scope="col">Screen</th>
+                        <th scope="col">Showing time</th>
+                        <th scope="col">Tickets</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var booking in Model)
+                    {
+                        <tr>
+                            <td>#@booking.Id</td>
+                            <td class="fw-semibold">@booking.MovieTitle</td>
+                            <td>@booking.ScreenName</td>
+                            <td>
+                                @booking.StartTime.ToString("dd MMM yyyy HH:mm")
+                            </td>
+                            <td>@booking.Quantity</td>
+                            <td>€@booking.TotalPrice.ToString("0.00")</td>
+                            <td>
+                                <a asp-action="Details"
+                                   asp-route-id="@booking.Id"
+                                   class="btn btn-outline-primary btn-sm"
+                                   aria-label="View tickets for booking @booking.Id">
+                                    View tickets
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<p class="text-muted small mt-3">
+    Bookings are listed newest first. Showing times are cinema local time.
+</p>

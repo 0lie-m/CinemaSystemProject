@@ -318,18 +318,76 @@ app.MapGet("/api/bookings/{id:int}", async Task<IResult> (
     return Results.Ok(booking);
 });
 
+app.MapPost("/api/bookings/quote", async Task<IResult> (
+    CreateBookingQuoteRequest request,
+    BookingFacade facade,
+    CancellationToken cancellationToken) =>
+{
+    try
+    {
+        var quote = await facade.QuoteAsync(
+            request.ShowingId,
+            request.TicketType ?? string.Empty,
+            request.Quantity,
+            cancellationToken);
+
+        return Results.Ok(quote);
+    }
+    catch (ArgumentException exception)
+    {
+        return Results.BadRequest(new { error = exception.Message });
+    }
+    catch (KeyNotFoundException exception)
+    {
+        return Results.NotFound(new { error = exception.Message });
+    }
+    catch (HttpRequestException)
+    {
+        return Results.Json(
+            new
+            {
+                error = "The pricing service is unavailable. Please try again."
+            },
+            statusCode: StatusCodes.Status503ServiceUnavailable);
+    }
+    catch (OperationCanceledException)
+        when (!cancellationToken.IsCancellationRequested)
+    {
+        return Results.Json(
+            new
+            {
+                error = "The pricing service timed out. Please try again."
+            },
+            statusCode: StatusCodes.Status504GatewayTimeout);
+    }
+    catch (InvalidOperationException exception)
+    {
+        return Results.Conflict(new { error = exception.Message });
+    }
+});
+
 app.MapPost("/api/bookings", async Task<IResult> (
     CreateBookingRequest request,
     BookingFacade facade,
     CancellationToken cancellationToken) =>
 {
+    if (!request.ExpectedTotalPrice.HasValue ||
+        request.ExpectedTotalPrice.Value < 0)
+    {
+        return Results.BadRequest(new
+        {
+            error = "Provide the non-negative total price accepted from a quote."
+        });
+    }
+
     try
     {
         var booking = await facade.BookAsync(
             request.ShowingId,
             request.TicketType ?? string.Empty,
             request.Quantity,
-            cancellationToken);
+            cancellationToken,
+            expectedTotalPrice: request.ExpectedTotalPrice.Value);
 
         return Results.Created($"/api/bookings/{booking.Id}", new
         {
@@ -357,14 +415,20 @@ app.MapPost("/api/bookings", async Task<IResult> (
     catch (HttpRequestException)
     {
         return Results.Json(
-            new { error = "The pricing service is unavailable. Please try again." },
+            new
+            {
+                error = "The pricing service is unavailable. Please try again."
+            },
             statusCode: StatusCodes.Status503ServiceUnavailable);
     }
     catch (OperationCanceledException)
         when (!cancellationToken.IsCancellationRequested)
     {
         return Results.Json(
-            new { error = "The pricing service timed out. Please try again." },
+            new
+            {
+                error = "The pricing service timed out. Please try again."
+            },
             statusCode: StatusCodes.Status504GatewayTimeout);
     }
     catch (InvalidOperationException exception)

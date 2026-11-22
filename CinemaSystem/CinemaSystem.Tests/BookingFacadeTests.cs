@@ -89,6 +89,70 @@ public class BookingFacadeTests
         Assert.Equal(0, await database.Db.Bookings.CountAsync());
         Assert.Equal(0, await database.Db.BookedTickets.CountAsync());
     }
+        [Fact]
+    public async Task QuoteAsync_EnoughSeats_ReturnsPriceWithoutSaving()
+    {
+        using var database = new TestDatabase();
+        var pricing = new FakePricingClient();
+        var facade = new BookingFacade(database.Db, pricing);
+
+        var quote = await facade.QuoteAsync(
+            database.ShowingId, "adult", 2);
+
+        Assert.Equal(12m, quote.UnitPrice);
+        Assert.Equal(2, quote.Quantity);
+        Assert.Equal(24m, quote.TotalPrice);
+        Assert.Equal(1, pricing.CallCount);
+
+        Assert.Equal(0, await database.Db.Bookings.CountAsync());
+        Assert.Equal(0, await database.Db.BookedTickets.CountAsync());
+    }
+
+    [Fact]
+    public async Task BookAsync_PriceChanged_RejectsBookingWithoutSaving()
+    {
+        using var database = new TestDatabase();
+        var pricing = new FakePricingClient();
+        var facade = new BookingFacade(database.Db, pricing);
+
+        // The customer accepted €20, but the fresh server quote is €24.
+        var exception = await Assert.ThrowsAsync<InvalidOperationException>(
+            () => facade.BookAsync(
+                database.ShowingId,
+                "adult",
+                2,
+                expectedTotalPrice: 20m));
+
+        Assert.Contains("price has changed", exception.Message);
+        Assert.Equal(1, pricing.CallCount);
+        Assert.Equal(0, await database.Db.Bookings.CountAsync());
+        Assert.Equal(0, await database.Db.BookedTickets.CountAsync());
+    }
+
+    [Fact]
+    public async Task BookAsync_PriceMatchesQuote_SavesBooking()
+    {
+        using var database = new TestDatabase();
+        var pricing = new FakePricingClient();
+        var facade = new BookingFacade(database.Db, pricing);
+
+        var quote = await facade.QuoteAsync(
+            database.ShowingId, "adult", 2);
+
+        var booking = await facade.BookAsync(
+            database.ShowingId,
+            "adult",
+            2,
+            expectedTotalPrice: quote.TotalPrice);
+
+        Assert.Equal(24m, booking.TotalPrice);
+        Assert.Equal(2, booking.Tickets.Count);
+
+        // One pricing request for the preview, another for confirmation.
+        Assert.Equal(2, pricing.CallCount);
+        Assert.Equal(1, await database.Db.Bookings.CountAsync());
+        Assert.Equal(2, await database.Db.BookedTickets.CountAsync());
+    }
 
     private sealed class FakePricingClient : IPricingClient
     {

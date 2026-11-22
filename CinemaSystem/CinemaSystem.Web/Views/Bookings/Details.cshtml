@@ -1,0 +1,56 @@
+@model CinemaSystem.Web.Models.BookingDetailsViewModel
+
+@{
+    ViewData["Title"] = $"Booking {Model.Id}";
+}
+
+<h1 class="mt-4">Booking #@Model.Id</h1>
+
+@if (TempData["SuccessMessage"] is string message)
+{
+    <div class="alert alert-success" role="status">@message</div>
+}
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h2 class="h4">@Model.MovieTitle</h2>
+        <p>
+            @Model.ScreenName —
+            @Model.StartTime.ToString("dd MMM yyyy HH:mm")
+        </p>
+        <p class="mb-0">
+            <strong>@Model.Quantity ticket(s)</strong> —
+            Total: <strong>€@Model.TotalPrice.ToString("0.00")</strong>
+        </p>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Ticket ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price paid</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model.Tickets)
+            {
+                <tr>
+                    <td>@ticket.Id</td>
+                    <td>@ticket.TicketType</td>
+                    <td>€@ticket.PricePaid.ToString("0.00")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+    View dashboard
+</a>
+
+<a asp-action="Create" class="btn btn-outline-secondary">
+    Sell more tickets
+</a>
