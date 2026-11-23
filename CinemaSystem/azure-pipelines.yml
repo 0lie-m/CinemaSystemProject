@@ -49,7 +49,7 @@ steps:
       failTaskOnMissingResultsFile: true
       publishRunAttachments: true
 
-        - script: >
+  - script: >
       dotnet publish "CinemaSystem.Pricing.Api/CinemaSystem.Pricing.Api.csproj"
       --configuration "$(buildConfiguration)"
       --no-build
