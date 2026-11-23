@@ -10,15 +10,46 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 
-var connectionString = new SqliteConnectionStringBuilder
-{
-    DataSource = Path.Combine(
-        builder.Environment.ContentRootPath,
-        "cinema.db")
-};
+var databaseProvider =
+    builder.Configuration["Database:Provider"] ?? "Sqlite";
 
-builder.Services.AddDbContext<CinemaDbContext>(options =>
-    options.UseSqlite(connectionString.ToString()));
+if (databaseProvider.Equals(
+    "SqlServer", StringComparison.OrdinalIgnoreCase))
+{
+    var sqlConnectionString =
+        builder.Configuration.GetConnectionString("CinemaDatabase");
+
+    if (string.IsNullOrWhiteSpace(sqlConnectionString))
+    {
+        throw new InvalidOperationException(
+            "The CinemaDatabase connection string is required for SQL Server.");
+    }
+
+    builder.Services.AddDbContext<SqlServerCinemaDbContext>(options =>
+        options.UseSqlServer(sqlConnectionString));
+
+    // Existing endpoints and BookingFacade still use CinemaDbContext.
+    builder.Services.AddScoped<CinemaDbContext>(services =>
+        services.GetRequiredService<SqlServerCinemaDbContext>());
+}
+else if (databaseProvider.Equals(
+    "Sqlite", StringComparison.OrdinalIgnoreCase))
+{
+    var sqliteConnectionString = new SqliteConnectionStringBuilder
+    {
+        DataSource = Path.Combine(
+            builder.Environment.ContentRootPath,
+            "cinema.db")
+    };
+
+    builder.Services.AddDbContext<CinemaDbContext>(options =>
+        options.UseSqlite(sqliteConnectionString.ToString()));
+}
+else
+{
+    throw new InvalidOperationException(
+        "Database:Provider must be Sqlite or SqlServer.");
+}
 
 builder.Services.AddHttpClient<IPricingClient, PricingClient>(client =>
 {
@@ -32,6 +63,34 @@ builder.Services.AddHttpClient<IPricingClient, PricingClient>(client =>
 builder.Services.AddScoped<BookingFacade>();
 
 var app = builder.Build();
+
+// SQL Server rolls back a transaction selected as a deadlock victim.
+// Return a useful conflict response so the customer can refresh and retry.
+app.Use(async (context, next) =>
+{
+    try
+    {
+        await next(context);
+    }
+    catch (Exception exception)
+        when (!context.Response.HasStarted &&
+              exception.GetBaseException()
+                  is Microsoft.Data.SqlClient.SqlException { Number: 1205 })
+    {
+        app.Logger.LogWarning(
+            exception,
+            "A database transaction was rolled back because of a deadlock.");
+
+        context.Response.Clear();
+        context.Response.StatusCode = StatusCodes.Status409Conflict;
+
+        await context.Response.WriteAsJsonAsync(new
+        {
+            error = "Another request changed availability at the same time. " +
+                    "Refresh the page and try again."
+        });
+    }
+});
 
 if (app.Environment.IsDevelopment())
 {
@@ -202,8 +261,10 @@ app.MapPost("/api/showings", async Task<IResult> (
             new { error = "Base price must be non-negative with at most two decimal places." });
     }
 
+   // Protect the overlap check and insertion in the same transaction.
     await using var transaction =
-        await db.Database.BeginTransactionAsync();
+    await db.Database.BeginTransactionAsync(
+        System.Data.IsolationLevel.Serializable);
 
     var movie = await db.Movies.FindAsync(request.MovieId);
 

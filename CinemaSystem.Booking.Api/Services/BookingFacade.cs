@@ -72,9 +72,11 @@ public class BookingFacade
         }
 
         // Keep the final availability check and save together.
-        // The HTTP pricing request finishes before this transaction starts.
-        await using var transaction =
-            await _db.Database.BeginTransactionAsync(cancellationToken);
+    
+await using var transaction =
+    await _db.Database.BeginTransactionAsync(
+        System.Data.IsolationLevel.Serializable,
+        cancellationToken);
 
         var currentShowing = await LoadShowingAsync(
             showingId,

@@ -69,4 +69,9 @@ public class CinemaDbContext : DbContext
                 showing.StartTime
             });
     }
+    // Allows a provider-specific context to reuse the shared model.
+    protected CinemaDbContext(DbContextOptions options)
+    : base(options)
+{
+}
 }

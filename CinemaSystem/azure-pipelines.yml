@@ -74,3 +74,29 @@ steps:
       appName: 'cinema-pricing-oliver-t00247328'
       package: '$(Build.ArtifactStagingDirectory)/pricing.zip'
       deploymentMethod: 'zipDeploy'
+
+  - script: >
+      dotnet publish "CinemaSystem.Booking.Api/CinemaSystem.Booking.Api.csproj"
+      --configuration "$(buildConfiguration)"
+      --no-build
+      --output "$(Build.ArtifactStagingDirectory)/booking"
+    displayName: 'Publish Booking API'
+
+  - task: ArchiveFiles@2
+    displayName: 'Package Booking API'
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/booking'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/booking.zip'
+      replaceExistingArchive: true
+
+  - task: AzureWebApp@1
+    displayName: 'Deploy Booking API to Azure'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    inputs:
+      azureSubscription: 'cinema-azure-connection'
+      appType: 'webApp'
+      appName: 'cinema-booking-oliver-t00247328'
+      package: '$(Build.ArtifactStagingDirectory)/booking.zip'
+      deploymentMethod: 'zipDeploy'
