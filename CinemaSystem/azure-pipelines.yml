@@ -48,3 +48,29 @@ steps:
       failTaskOnFailedTests: true
       failTaskOnMissingResultsFile: true
       publishRunAttachments: true
+
+        - script: >
+      dotnet publish "CinemaSystem.Pricing.Api/CinemaSystem.Pricing.Api.csproj"
+      --configuration "$(buildConfiguration)"
+      --no-build
+      --output "$(Build.ArtifactStagingDirectory)/pricing"
+    displayName: 'Publish Pricing API'
+
+  - task: ArchiveFiles@2
+    displayName: 'Package Pricing API'
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/pricing'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/pricing.zip'
+      replaceExistingArchive: true
+
+  - task: AzureWebApp@1
+    displayName: 'Deploy Pricing API to Azure'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    inputs:
+      azureSubscription: 'cinema-azure-connection'
+      appType: 'webApp'
+      appName: 'cinema-pricing-oliver-t00247328'
+      package: '$(Build.ArtifactStagingDirectory)/pricing.zip'
+      deploymentMethod: 'zipDeploy'
