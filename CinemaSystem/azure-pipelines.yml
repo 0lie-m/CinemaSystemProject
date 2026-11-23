@@ -1,0 +1,50 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  solution: 'CinemaSystem/CinemaSystem.slnx'
+  testProject: 'CinemaSystem/CinemaSystem.Tests/CinemaSystem.Tests.csproj'
+
+steps:
+  - checkout: self
+
+  # Install the SDK requested by the repository.
+  - task: UseDotNet@2
+    displayName: 'Install .NET SDK'
+    inputs:
+      packageType: 'sdk'
+      useGlobalJson: true
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - script: dotnet restore "$(solution)"
+    displayName: 'Restore dependencies'
+
+  - script: dotnet build "$(solution)" --configuration "$(buildConfiguration)" --no-restore
+    displayName: 'Build all projects'
+
+  - script: >
+      dotnet test "$(testProject)"
+      --configuration "$(buildConfiguration)"
+      --no-build
+      --logger "trx;LogFileName=cinema-tests.trx"
+      --results-directory "$(Agent.TempDirectory)/CinemaTestResults"
+    displayName: 'Run automated tests'
+
+  # Publish results even when a test fails.
+  - task: PublishTestResults@2
+    displayName: 'Publish test results'
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: 'VSTest'
+      testResultsFiles: '**/*.trx'
+      searchFolder: '$(Agent.TempDirectory)/CinemaTestResults'
+      testRunTitle: 'Cinema System regression tests'
+      failTaskOnFailedTests: true
+      failTaskOnMissingResultsFile: true
+      publishRunAttachments: true
