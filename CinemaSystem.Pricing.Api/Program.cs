@@ -1,5 +1,6 @@
 using CinemaSystem.Pricing.Api.Services;
 using CinemaSystem.Pricing.Api.Strategies;
+using CinemaSystem.Pricing.Api.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,16 +69,5 @@ app.MapPost("/api/pricing/quote", IResult (
 })
 .WithName("GetTicketPriceQuote");
 
-app.Run();
+await app.RunAsync();
 
-public record PricingRequest(
-    string? TicketType,
-    decimal BasePrice,
-    int Quantity,
-    bool IsPremiumMovie,
-    decimal OccupancyRate);
-
-public record PricingResponse(
-    decimal UnitPrice,
-    int Quantity,
-    decimal TotalPrice);

@@ -1,0 +1,67 @@
+@startuml architecture-microservices
+title Cinema System - Current Local Microservices Architecture
+
+top to bottom direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+actor "Cinema staff" as Staff
+
+node "Local development computer" {
+    component "Web browser" as Browser
+
+    node "Website process\nlocalhost:5300" {
+        component "CinemaSystem.Web\nASP.NET MVC website" as Website
+    }
+
+    node "Booking service process\nlocalhost:5209" {
+        component "CinemaSystem.Booking.Api\nCinema management and bookings" as Booking
+        component "CinemaSystem.Core\nTicket creators and ticket classes" as Core
+    }
+
+    node "Pricing service process\nlocalhost:5104" {
+        component "CinemaSystem.Pricing.Api\nDynamic pricing and ticket strategies" as Pricing
+    }
+
+    database "cinema.db\nSQLite" as Database
+}
+
+Staff --> Browser : uses
+Browser --> Website : HTTP requests\nHTML pages and forms
+Website --> Booking : HTTP / JSON\nMovies, screens, showings,\nquotes and bookings
+Booking --> Pricing : HTTP / JSON\nPOST /api/pricing/quote
+Booking --> Database : Entity Framework Core\nReads and writes
+Booking ..> Core : in-process library calls
+
+note right of Website
+Controllers call the Booking API.
+Views display the returned data.
+No direct database access.
+end note
+
+note right of Booking
+Facade coordinates booking operations.
+Uses Factory Method ticket creators.
+Owns cinema and booking data.
+end note
+
+note right of Pricing
+Strategy selects ticket-type pricing.
+Applies premium and demand adjustments.
+Stateless: no database access.
+end note
+
+note bottom of Database
+Movies, Screens, Showings,
+Bookings and BookedTickets
+end note
+
+legend bottom
+Solid arrows show runtime communication.
+The dotted arrow shows use of a local library.
+Website, Booking and Pricing run as separate processes.
+Core is a library, not a microservice.
+Azure hosting is not yet implemented.
+endlegend
+
+@enduml

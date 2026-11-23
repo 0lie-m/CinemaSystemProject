@@ -11,15 +11,14 @@ public class DynamicPricingService
         bool isPremiumMovie,
         decimal occupancyRate = 0m)
     {
-        if (basePrice < 0)
-{
-    throw new ArgumentOutOfRangeException(nameof(basePrice));
-}
+        // Standard guards keep argument validation concise.
+        ArgumentOutOfRangeException.ThrowIfNegative(basePrice);
 
-if (occupancyRate < 0m || occupancyRate > 1m)
-{
-    throw new ArgumentOutOfRangeException(nameof(occupancyRate));
-}
+        if (occupancyRate < 0m || occupancyRate > 1m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(occupancyRate));
+        }
+
         decimal adjustedPrice = basePrice;
 
         if (isPremiumMovie)
@@ -34,16 +33,13 @@ if (occupancyRate < 0m || occupancyRate > 1m)
 
         var calculator = new TicketPriceCalculator(strategy);
 
-        if (quantity < 0)
-{
-    throw new ArgumentOutOfRangeException(nameof(quantity));
-}
+        ArgumentOutOfRangeException.ThrowIfNegative(quantity);
 
-decimal unitPrice = calculator.CalculatePrice(adjustedPrice, 1);
+        decimal unitPrice = calculator.CalculatePrice(adjustedPrice, 1);
 
-decimal roundedUnitPrice = Math.Round(
-    unitPrice, 2, MidpointRounding.AwayFromZero);
+        decimal roundedUnitPrice = Math.Round(
+            unitPrice, 2, MidpointRounding.AwayFromZero);
 
-return roundedUnitPrice * quantity;
+        return roundedUnitPrice * quantity;
     }
 }

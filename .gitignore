@@ -486,3 +486,5 @@ $RECYCLE.BIN/
 **/cinema.db-shm
 **/cinema.db-wal
 **/cinema.db-journal
+
+.sonarqube/

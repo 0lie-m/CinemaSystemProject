@@ -4,10 +4,8 @@ public class AdultPricingStrategy : ITicketPricingStrategy
 {
     public decimal CalculatePrice(decimal basePrice, int quantity)
     {
-        if (quantity < 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(quantity));
-        }
+        // Reject negative quantities using the standard argument guard.
+        ArgumentOutOfRangeException.ThrowIfNegative(quantity);
 
         return basePrice * quantity;
     }

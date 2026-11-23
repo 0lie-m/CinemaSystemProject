@@ -383,11 +383,11 @@ app.MapPost("/api/bookings", async Task<IResult> (
     try
     {
         var booking = await facade.BookAsync(
-            request.ShowingId,
-            request.TicketType ?? string.Empty,
-            request.Quantity,
-            cancellationToken,
-            expectedTotalPrice: request.ExpectedTotalPrice.Value);
+    request.ShowingId,
+    request.TicketType ?? string.Empty,
+    request.Quantity,
+    expectedTotalPrice: request.ExpectedTotalPrice.Value,
+    cancellationToken: cancellationToken);
 
         return Results.Created($"/api/bookings/{booking.Id}", new
         {
@@ -437,4 +437,4 @@ app.MapPost("/api/bookings", async Task<IResult> (
     }
 });
 
-app.Run();
+await app.RunAsync();

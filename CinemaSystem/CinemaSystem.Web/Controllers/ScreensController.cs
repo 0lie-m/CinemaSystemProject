@@ -52,13 +52,13 @@ public class ScreensController : Controller
     [HttpGet]
     public IActionResult Create()
     {
-        return View(new ScreenViewModel());
+        return View(new CreateScreenViewModel());
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        ScreenViewModel model,
+        CreateScreenViewModel model,
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid)

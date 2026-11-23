@@ -52,13 +52,16 @@ public class MoviesController : Controller
     [HttpGet]
     public IActionResult Create()
     {
-        return View(new MovieViewModel());
+        return View(new CreateMovieViewModel
+        {
+            IsPremium = false
+        });
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(
-        MovieViewModel model,
+        CreateMovieViewModel model,
         CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid)

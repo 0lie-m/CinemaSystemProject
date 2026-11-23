@@ -7,7 +7,7 @@ public class ChildPricingStrategyTests
     [Fact]
     public void CalculatePrice_TwoChildTicketsAtTenEuro_ReturnsFourteenEuro()
     {
-        ITicketPricingStrategy strategy = new ChildPricingStrategy();
+        var strategy = new ChildPricingStrategy();
 
         decimal total = strategy.CalculatePrice(10m, 2);
 

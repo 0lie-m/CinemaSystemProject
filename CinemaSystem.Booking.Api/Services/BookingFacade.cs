@@ -36,12 +36,13 @@ public class BookingFacade
         return context.Quote;
     }
 
+        // Keep cancellation last to follow the standard async method convention.
     public async Task<BookingEntity> BookAsync(
         int showingId,
         string ticketType,
         int quantity,
-        CancellationToken cancellationToken = default,
-        decimal? expectedTotalPrice = null)
+        decimal? expectedTotalPrice = null,
+        CancellationToken cancellationToken = default)
     {
         if (expectedTotalPrice.HasValue &&
             expectedTotalPrice.Value < 0)
@@ -136,10 +137,8 @@ public class BookingFacade
         int quantity,
         CancellationToken cancellationToken)
     {
-        if (showingId <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(showingId));
-        }
+               // Use the standard guard for a positive showing ID.
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(showingId);
 
         if (quantity <= 0)
         {
