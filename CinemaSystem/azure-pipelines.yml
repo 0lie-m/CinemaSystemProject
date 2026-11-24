@@ -99,4 +99,30 @@ steps:
       appType: 'webApp'
       appName: 'cinema-booking-oliver-t00247328'
       package: '$(Build.ArtifactStagingDirectory)/booking.zip'
+      deploymentMethod: 'zipDeploy
+
+  - script: >
+      dotnet publish "CinemaSystem/CinemaSystem.Web/CinemaSystem.Web.csproj"
+      --configuration "$(buildConfiguration)"
+      --no-build
+      --output "$(Build.ArtifactStagingDirectory)/web"
+    displayName: 'Publish MVC website'
+
+  - task: ArchiveFiles@2
+    displayName: 'Package MVC website'
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/web'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/web.zip'
+      replaceExistingArchive: true
+
+  - task: AzureWebApp@1
+    displayName: 'Deploy MVC website to Azure'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    inputs:
+      azureSubscription: 'cinema-azure-connection'
+      appType: 'webApp'
+      appName: 'cinema-web-oliver-t00247328'
+      package: '$(Build.ArtifactStagingDirectory)/web.zip'
       deploymentMethod: 'zipDeploy'
