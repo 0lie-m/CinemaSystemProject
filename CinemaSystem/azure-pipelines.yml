@@ -99,7 +99,7 @@ steps:
       appType: 'webApp'
       appName: 'cinema-booking-oliver-t00247328'
       package: '$(Build.ArtifactStagingDirectory)/booking.zip'
-      deploymentMethod: 'zipDeploy
+      deploymentMethod: 'zipDeploy'
 
   - script: >
       dotnet publish "CinemaSystem/CinemaSystem.Web/CinemaSystem.Web.csproj"
